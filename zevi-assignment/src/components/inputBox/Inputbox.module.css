@@ -1,0 +1,33 @@
+.container{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.inputFieldContainer{
+    height: 100%;
+    width: 100%;
+}
+
+.inputField{
+    height: 100%;
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+.searchIconContainer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10px;
+    height: 100%;
+    cursor: pointer;
+}
