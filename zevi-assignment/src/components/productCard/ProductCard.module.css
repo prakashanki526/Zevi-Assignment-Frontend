@@ -1,0 +1,60 @@
+.container{
+    height: 20rem;
+    width: 12rem;
+    float: left;
+    margin: 0 10px 12px 12px;
+}
+
+.imgContainer{
+    height: 15rem;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.imgContainer:hover > .viewProduct{
+    display: flex;
+}
+
+.img{
+    height: 100%;
+    width: 100%;
+}
+
+.likeBtn{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewProduct{
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgb(158, 26, 245);
+    opacity: 0.5;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: none;
+}
+
+.detailsContainer{
+    height: 5rem;
+    width: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+

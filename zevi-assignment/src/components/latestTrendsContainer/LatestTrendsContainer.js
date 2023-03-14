@@ -7,9 +7,12 @@ const LatestTrendsContainer = () => {
         <div className={styles.container}>
             <div className={styles.latestTrends}>
                 <h3 className={styles.title}>Latest Trends</h3>
-                <SuggestionCard />
-                <SuggestionCard />
-                <SuggestionCard />
+                <div className={styles.cardContainer}>
+                    <SuggestionCard />
+                    <SuggestionCard />
+                    <SuggestionCard />
+                    <SuggestionCard />
+                </div>
             </div>
             <div className={styles.populars}>
                 <h3 className={styles.title}>Popular Suggestions</h3>

@@ -23,3 +23,13 @@
     border-radius: 4px;
     box-shadow: 0px 0px 10px 5px rgb(197, 196, 196);
 }
+
+@media screen and (max-width: 767px) {
+    .latestTrendsContainer{
+        width: 80%;
+    }
+
+    .searchBarContainer{
+        width: 70%;
+    }
+}
