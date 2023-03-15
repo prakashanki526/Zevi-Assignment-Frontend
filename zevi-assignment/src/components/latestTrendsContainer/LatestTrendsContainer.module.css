@@ -22,6 +22,10 @@
 .category{
     cursor: pointer;
     width: fit-content;
+    letter-spacing: 1px;
+    padding: 1px 0;
+    color: rgb(75, 75, 75);
+    font-weight: 500;
 }
 
 ::-webkit-scrollbar{

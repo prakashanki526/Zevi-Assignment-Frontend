@@ -3,11 +3,13 @@ import styles from './LatestTrendsContainer.module.css'
 import SuggestionCard from '../suggestionCard/SuggestionCard';
 import { getTrendingProducts, getCategories } from '../../api/discover';
 import LoadingSpinner from '../Spinner/Spinner';
+import { useNavigate } from 'react-router-dom';
 
 const LatestTrendsContainer = () => {
     const [trendingList, setTrendingList] = useState([]);
     const [categoryList, setCategoryList] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     async function fetchTrendingProducts(){
         setIsLoading(true);
@@ -44,7 +46,7 @@ const LatestTrendsContainer = () => {
                     <h3 className={styles.title}>Popular Suggestions</h3>
                     {categoryList.map((category,index)=>{
                         return (
-                            <div className={styles.category}>{category.name}</div>
+                            <div className={styles.category} onClick={()=>navigate(`/products/${category.name}`)}>{category.name}</div>
                         )
                     })}
                 </div>

@@ -39,6 +39,13 @@ const SearchResultPage = () => {
         setIsLoading(true);
         const products = await getFilteredProducts({name: inputText});
         setIsLoading(false);
+        setFilters({
+            name: inputText,
+            brand: "",
+            priceMin: "",
+            priceMax: "",
+            rating: ""
+        })
         setProductList(products);
         setInputText("");
     }
@@ -81,8 +88,8 @@ const SearchResultPage = () => {
                     <Sidebar filters={filters} setFilters={setFilters} setProductList={setProductList} setIsLoading={setIsLoading} />
                 </div>
                 <div className={styles.wrapper}>
-                    {!productList.length && <EmptyFile />}
-                    {isLoading && productList.length>0 && <LoadingSpinner />}
+                    {!productList.length && !isLoading && <EmptyFile />}
+                    {isLoading && <LoadingSpinner />}
                     {!isLoading && productList.length>0 && <div className={styles.cardContainer}>
                         {productList.map((product,index)=>{
                             return (
