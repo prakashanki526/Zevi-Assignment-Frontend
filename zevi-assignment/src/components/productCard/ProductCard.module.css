@@ -33,6 +33,20 @@
     justify-content: center;
 }
 
+.price{
+    font-size: 14px;
+}
+
+.costPrice{
+    color: grey;
+    text-decoration: line-through;
+}
+
+.sellingPrice{
+    color: blue;
+    font-weight: 600;
+}
+
 .viewProduct{
     height: 2.5rem;
     display: flex;

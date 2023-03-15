@@ -2,18 +2,42 @@
     height: 12rem;
     width: 8rem;
     float: left;
-    margin-right: 15px;
-    margin-bottom: 10px;
+    margin: 0 10px 10px 10px;
 }
 
 .imgContainer{
     height: 10rem;
     width: 8rem;
-    border: 1px solid red;
+    position: relative;
+}
+
+.imgContainer:hover > .viewProduct{
+    display: flex;
+}
+
+.img{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
 }
 
 .nameContainer{
     height: 2rem;
     font-size: 14px;
     padding: 8px 0;
+    color: grey;
+}
+
+.viewProduct{
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgb(158, 26, 245);
+    opacity: 0.5;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: none;
 }

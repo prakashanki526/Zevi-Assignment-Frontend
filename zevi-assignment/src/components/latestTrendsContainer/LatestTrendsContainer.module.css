@@ -11,6 +11,11 @@
     height: fit-content;
 }
 
+.category{
+    cursor: pointer;
+    width: fit-content;
+}
+
 ::-webkit-scrollbar{
     display: none;
 }
