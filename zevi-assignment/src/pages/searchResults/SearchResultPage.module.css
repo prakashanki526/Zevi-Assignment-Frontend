@@ -7,6 +7,13 @@
     align-items: center;
     padding: 0 4rem;
     letter-spacing: 1px;
+    position: relative;
+}
+
+.logo{
+    position: absolute;
+    right: 4rem;
+    top: 1rem;
 }
 
 .inputContainer{
@@ -38,8 +45,17 @@
     height: 100%;
 }
 
-.cardContainer{
+.wrapper{
     flex: 7;
+    /* border: 1px solid red; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardContainer{
+    width: 100%;
     /* border: 1px solid red; */
     height: 100%;
     overflow-y: scroll;
@@ -86,8 +102,14 @@
     .sidebar{
         flex: 2;
     }
-    .cardContainer{
+    .wrapper{
         flex: 4;
+    }
+    .inputContainer{
+        width: 60%;
+    }
+    .logo{
+        right: 1rem;
     }
 }
 

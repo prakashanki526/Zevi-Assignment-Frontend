@@ -19,7 +19,7 @@
 }
 
 .checkbox{
-    height: 20px;
+    cursor: pointer;
 }
 
 .filter{
@@ -76,6 +76,7 @@
     justify-content: center;
     font-size: 10px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .showAll:hover{

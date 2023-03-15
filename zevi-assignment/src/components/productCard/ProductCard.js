@@ -3,15 +3,15 @@ import styles from './ProductCard.module.css'
 import heartLineIcon from '../../assets/heart-line.svg'
 import heartFillIcon from '../../assets/heart-fill.svg'
 import { toggleLike } from '../../api/discover';
-import { Rating } from 'react-simple-star-rating'
+import { Rating } from 'react-simple-star-rating';
 
 const ProductCard = (props) => {
     const product = props.productDetails;
     const [isFavourite, setIsFavourite] = useState(product.favourite);
 
     async function handleLike(){
-        await toggleLike(product._id);
         setIsFavourite(!isFavourite);
+        await toggleLike(product._id);
     }
 
     return (
@@ -30,7 +30,7 @@ const ProductCard = (props) => {
                     <span className={styles.sellingPrice}>Rs. {product.sellingPrice}</span>
                 </div>
                 <div className={styles.rating}>
-                    <Rating initialValue={product.rating} size={20} allowHover={false} />
+                    <Rating initialValue={product.rating} size={20} allowHover={false} readonly={true} />
                 </div>
             </div>
         </div>

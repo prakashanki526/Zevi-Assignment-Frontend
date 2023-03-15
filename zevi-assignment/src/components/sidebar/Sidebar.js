@@ -1,15 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import styles from './Sidebar.module.css'
-import { getBrands } from '../../api/discover';
+import { getBrands, getAllProducts } from '../../api/discover';
 import starEmpty from '../../assets/star-empty.svg';
 import starFill from '../../assets/star-fill.svg';
 import { Rating } from 'react-simple-star-rating'
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = (props) => {
     const [brandList, setBrandList] = useState([]);
     const filters = props.filters;
     const setFilters = props.setFilters;
     const [brandIsckecked, setBrandIsChecked] = useState(false);
+    const navigate = useNavigate();
 
     async function fetchBrands(){
         const brands = await getBrands();
@@ -25,7 +27,7 @@ const Sidebar = (props) => {
     }
 
     function handleFilterPrice(e){
-        setFilters({...filters, priceMin: e.target.value == 1000 ? 0 : 1000, priceMax: e.target.value===1000? 999 : 3000});
+        setFilters({...filters, priceMin: e.target.value == 1000 ? 0 : 1000, priceMax: e.target.value ==1000 ? 999 : 3000});
     }
 
     function handleFilterRating(e){
@@ -34,12 +36,31 @@ const Sidebar = (props) => {
 
     function handleClearFilters(){
         setFilters({
-            name: "",
+            name: filters.name,
             brand: "",
             priceMin: "",
             priceMax: "",
             rating: ""
         });
+    }
+
+    async function fetchAllProducts(){
+        props.setIsLoading(true);
+        const products = await getAllProducts();
+        props.setIsLoading(false);
+        props.setProductList(products);
+    }
+    
+    async function handleViewAll(){
+        setFilters({
+            name: "",
+            brand: "",
+            priceMin: "",
+            priceMax: "",
+            rating: ""
+        })
+        navigate('/products');
+        // await fetchAllProducts();
     }
     
 
@@ -82,7 +103,7 @@ const Sidebar = (props) => {
                         return (
                             <div className={styles.filter} key={rating}>
                                 <input type='checkbox' className={styles.checkbox}  onChange={handleFilterRating} value={rating} checked={filters.rating == rating ? true : false} />
-                                <Rating initialValue={rating} size={20} allowHover={false} />
+                                <Rating initialValue={rating} size={20} allowHover={false} readonly={true} />
                             </div>
                         )
                     })}
@@ -90,7 +111,7 @@ const Sidebar = (props) => {
             </div>
             <div className={styles.btnContainer}>
                 <div className={styles.clear} onClick={handleClearFilters}>CLEAR FILTERS</div>
-                <div className={styles.showAll}>VIEW ALL PRODUCTS</div>
+                <div className={styles.showAll} onClick={handleViewAll}>VIEW ALL PRODUCTS</div>
             </div>
         </div>
     );

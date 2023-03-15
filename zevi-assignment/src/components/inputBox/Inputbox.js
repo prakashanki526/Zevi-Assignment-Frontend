@@ -17,7 +17,7 @@ const Inputbox = (props) => {
         if(!inputText){
             return;
         }
-        navigate(`/${inputText}`);
+        navigate(`/products/${inputText}`);
         setInputText("");
     }
 
